@@ -1,0 +1,10 @@
+c:\users\resobyte\documents\visual studio 2015\Projects\uTorrent\uTorrent\bin\Debug\uTorrent.exe.config
+c:\users\resobyte\documents\visual studio 2015\Projects\uTorrent\uTorrent\bin\Debug\uTorrent.exe
+c:\users\resobyte\documents\visual studio 2015\Projects\uTorrent\uTorrent\bin\Debug\uTorrent.pdb
+c:\users\resobyte\documents\visual studio 2015\Projects\uTorrent\uTorrent\bin\Debug\Bunifu_UI_v1.5.3.dll
+c:\users\resobyte\documents\visual studio 2015\Projects\uTorrent\uTorrent\obj\Debug\uTorrent.csprojResolveAssemblyReference.cache
+c:\users\resobyte\documents\visual studio 2015\Projects\uTorrent\uTorrent\obj\Debug\uTorrent.Form1.resources
+c:\users\resobyte\documents\visual studio 2015\Projects\uTorrent\uTorrent\obj\Debug\uTorrent.Properties.Resources.resources
+c:\users\resobyte\documents\visual studio 2015\Projects\uTorrent\uTorrent\obj\Debug\uTorrent.csproj.GenerateResource.Cache
+c:\users\resobyte\documents\visual studio 2015\Projects\uTorrent\uTorrent\obj\Debug\uTorrent.exe
+c:\users\resobyte\documents\visual studio 2015\Projects\uTorrent\uTorrent\obj\Debug\uTorrent.pdb
