@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Quartz;
 
 namespace uTorrent
 {
@@ -39,10 +40,18 @@ namespace uTorrent
                 DosyaAdi = file.SafeFileName;
                     
             }
+           
+                ISimpleTrigger trigger = (ISimpleTrigger)TriggerBuilder.Create()
+                    .WithIdentity("trigger1", "group1") // Trigger name ve group
+                    .WithSimpleSchedule(x => x
+                        .WithIntervalInMinutes(1) // Ne kadar süre aralığında çalığacağı belirleniyor - 1 dakika
+                        .RepeatForever()) // Sonsuza Dek
+                    .EndAt(DateBuilder.DateOf(22, 0, 0)) // Belirlenen saat: 22:00
+                    .Build();
+               
 
-
-            Process.Start(Path.Combine(DosyaYolu));
-        
+            
+            
 
 
         }
