@@ -54,11 +54,10 @@ namespace uTorrent
             Process.Start(Path.Combine(DosyaYolu));
             Process process = new Process();
             process.StartInfo.FileName = "cmd.exe";
-            DateTime dt = new DateTime();
-            dt = DateTime.Now;
-            DateTime dt1 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0,0);
+            DateTime dtNow = DateTime.Now;
+            DateTime dtOver = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0,0);
 
-            TimeSpan dtTotal = (dt1 - dt);
+            TimeSpan dtTotal = (dtOver - dtNow);
             double total = (dtTotal.Hours * 3600 + dtTotal.Minutes * 60 + dtTotal.Seconds);
 
             process.StartInfo.Arguments = "/K shutdown -s -t "+total ;
