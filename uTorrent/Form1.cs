@@ -22,9 +22,19 @@ namespace uTorrent
             InitializeComponent();
         }
 
-        [DllImport("User32.dll")]
-        static extern int SetForegroundWindow(IntPtr point);
+        
 
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {   
+            Process pcs_iptal = new Process();
+            pcs_iptal.StartInfo.FileName = "cmd.exe";
+            pcs_iptal.StartInfo.Arguments = "/K shutdown -a";
+            pcs_iptal.Start();
+            Thread.Sleep(2000);
+            pcs_iptal.Kill();
+
+            base.OnFormClosed(e);
+        }
 
         private void btnSelect_File_Click(object sender, EventArgs e)
         {
@@ -32,7 +42,7 @@ namespace uTorrent
             file.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             file.Filter = "Torrentler |*.torrent";
     
-            string DosyaYolu = "";
+            string DosyaYolu = " ";
             string DosyaAdi = " ";
 
             if (file.ShowDialog() == DialogResult.OK)
@@ -58,7 +68,7 @@ namespace uTorrent
             DateTime dtOver = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0,0);
 
             TimeSpan dtTotal = (dtOver - dtNow);
-            double total = (dtTotal.Hours * 3600 + dtTotal.Minutes * 60 + dtTotal.Seconds);
+            double total = Math.Abs(dtTotal.Hours * 3600 + dtTotal.Minutes * 60 + dtTotal.Seconds);
 
             process.StartInfo.Arguments = "/K shutdown -s -t "+total ;
             process.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
@@ -66,7 +76,6 @@ namespace uTorrent
             Thread.Sleep(2000);
             process.Kill();
 
-            
-        }
+         }
     }
 }
